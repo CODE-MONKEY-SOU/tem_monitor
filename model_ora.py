@@ -43,6 +43,7 @@ class LocationDeviceMap(db.Model):
 DEVICETYPE_MAP = {1: '温控传感器', 2: '电流传感器'}
 
 
+
 # 定义DeviceMapping
 class DeviceMapping(db.Model):
     __tablename__ = 'device_mapping'
@@ -63,8 +64,8 @@ class DeviceMapping(db.Model):
         self.device_usingflag = device_usingflag
 
     def toDict(self):
-        return {'device_name': self.device_name, 'device_type': DEVICETYPE_MAP.get(self.device_type),
-                'device_macid': self.device_macid ,'supervise_type':self.supervise_type,}
+        return {'device_name': self.device_name, 'device_type': self.device_type,
+                'device_macid': self.device_macid ,'supervise_type':self.supervise_type,'supervise_name':self.supervise_name,'supervise_area':self.supervise_area,'supervise_highflag':self.device_usingflag}
 
 
 class TemperatureMapping(db.Model):

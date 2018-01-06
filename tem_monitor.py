@@ -75,6 +75,11 @@ def query_action():
 
 
 
+@app.route('/page_ssjc',methods=['GET'])
+def show_ssjc():
+    return render_template('ssjc.html')
+
+
 @app.route('/page_<pagename>',methods=['GET'])
 def show_page(pagename):
     pagename=pagename+'.html'
